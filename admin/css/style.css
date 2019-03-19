@@ -1,0 +1,113 @@
+body{
+    /* background-color: blueviolet; */
+    background: linear-gradient(to right, #007991, #78ffd6);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* margin: 0; */
+    height: 100%;
+}
+.n{
+    /* background-color: #dd4814; */
+    background: linear-gradient(to right, #007991, #78ffd6);
+    width: 50%;
+    height: 100%;
+    /* margin: 100px auto; */
+    text-align: center;
+    border-radius: 25px;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.m{
+    height: 89vh;
+    /* height: 100%; */
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form >*{
+    font-size: 29px;
+}
+form >h1{
+    font-size: 50px;
+}
+/* .btn{
+    background-color: blue;
+    border-radius: 10px;
+} */
+input[type=email]{
+	width:100%;
+    padding: 5px 15px 5px 15px;
+    font:normal 20px calibri;
+    display: inline-box;
+    margin-bottom:8px;
+    border: 1px solid #808080;
+    border-radius:4px;
+    box-sizing: border-box;
+   background-color:white;
+}
+input[type=submit]{
+    width:40%;
+    padding: 10px 15px 10px 15px;
+    font:normal bold 18px calibri;
+    display: inline-box;
+    border:none;
+    border-radius: 10px;
+    /* margin:8px 15px 8px 0px; */
+    color: #fff;
+    background-color:#2098D1;
+  }
+  input[type=text] {
+    width:100%;
+    padding: 5px 15px 5px 15px;
+    font:normal 20px calibri;
+    /* margin:8px 0; */
+    display: inline-box;
+    border: 1px solid #808080;
+    border-radius:4px;
+    box-sizing: border-box;
+    background-color:white;
+   
+}
+  input[type=password] {
+    width:100%;
+    padding: 5px 15px 5px 15px;
+    font:normal 20px calibri;
+    margin:8px 0;
+    display: inline-box;
+    border: 1px solid #808080;
+    border-radius:4px;
+    box-sizing: border-box;
+    background-color:white;
+   
+}
+input[type=submit]:hover{
+    background-color:#44CCEB;
+    cursor: pointer;
+  }
+  .copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2C3335;
+    color: white;
+    height: 6vh;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.echo
+{
+    color: red;
+}
+.ftt{
+    text-decoration:none;
+     color: white;
+}
+.ftt:hover{
+    text-decoration:none;
+     color: magenta;
+}
