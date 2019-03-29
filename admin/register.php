@@ -75,10 +75,12 @@ $sql = mysqli_query($conn,"SELECT * FROM `users` WHERE `email` = '$email1'");
 	exit();
  }
  
-mysqli_query($conn,"INSERT INTO `users` (`email`,`username`, `password`) VALUES ('$email1','$uname',  '$pass1')");
+$sql = mysqli_query($conn,"INSERT INTO users (email,username,password) VALUES ('$email1','$uname','$pass1')");
+if(mysqli_num_rows($sql) > 0){
 		echo "<p>You are registered</p>";
 		header('location:login.php');
 		exit();
+}
 }
 }	
 } 

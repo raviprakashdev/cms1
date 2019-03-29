@@ -20,15 +20,17 @@ $row = mysqli_fetch_array($sql);
 if($count > 0){
   
 session_start();	
-$_SESSION['login_status']=true;
-$_SESSION['uname'] = $row['uname'];
+// $_SESSION['login_status']=true;
+$_SESSION['uname']=$uname;
+// $_SESSION['uname'] = $row['uname'];
 // $_SESSION['name'] = $row['name'];
 // $_SESSION['lname'] = $row['lname'];
-$_SESSION['email'] = $row['email'];
+// $_SESSION['email'] = $row['email'];
 // $_SESSION['picture'] = $row['picture'];
 // $message = "wrong answer";
 // echo "<script type='text/javascript'>alert('$message');</script>";
 // sleep(0.1);
+
 header("Location:dashboard.php");
 // $message = "wrong answer";
 // echo "<script type='text/javascript'>alert('$message');</script>";
