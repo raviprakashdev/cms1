@@ -12,36 +12,30 @@ if(isset($_SESSION['uname']))
             <ul class="collection with-header">
             <li class="collection-header teal">
             <h5 class="white-text">Recent Posts</h5>
-            <span id="message"></span>
+            <!-- <span id="message"></span> -->
             </li>
+            <?php
+            $sql="SELECT * FROM posts ORDER BY id desc";
+            $res=mysqli_query($conn,$sql);
+            if(mysqli_num_rows($res)>0)
+            {
+              while($row=mysqli_fetch_assoc($res))
+              {
             
+            ?>
+            
+           
             
             <li class="collection-item">
             <a href=""><?php echo $row['title']?></a>
             <br>
             <span><a href="edit.php?id=<?php echo $row['id']; ?>"><i class="material-icons tiny">edit</i> Edit</a>| <a href="" id="<?php echo $row['id']; ?>" class="delete"><i class="material-icons tiny red-text">clear</i> Delete</a> | <a href=""><i class="material-icons tiny green-text">share</i> Share</a></span>
             </li>
-            <li class="collection-item">
-            <a href="">title</a>
-            <br>
-            <span><a href="edit.php?id=<?php echo $row['id']; ?>"><i class="material-icons tiny">edit</i> Edit</a>| <a href="" id="<?php echo $row['id']; ?>" class="delete"><i class="material-icons tiny red-text">clear</i> Delete</a> | <a href=""><i class="material-icons tiny green-text">share</i> Share</a></span>
-            </li>
-            <li class="collection-item">
-            <a href="">title</a>
-            <br>
-            <span><a href="edit.php?id=<?php echo $row['id']; ?>"><i class="material-icons tiny">edit</i> Edit</a>| <a href="" id="<?php echo $row['id']; ?>" class="delete"><i class="material-icons tiny red-text">clear</i> Delete</a> | <a href=""><i class="material-icons tiny green-text">share</i> Share</a></span>
-            </li>
-            <li class="collection-item">
-            <a href="">title</a>
-            <br>
-            <span><a href="edit.php?id=<?php echo $row['id']; ?>"><i class="material-icons tiny">edit</i> Edit</a>| <a href="" id="<?php echo $row['id']; ?>" class="delete"><i class="material-icons tiny red-text">clear</i> Delete</a> | <a href=""><i class="material-icons tiny green-text">share</i> Share</a></span>
-            </li>
-            <li class="collection-item">
-            <a href="">title</a>
-            <br>
-            <span><a href="edit.php?id=<?php echo $row['id']; ?>"><i class="material-icons tiny">edit</i> Edit</a>| <a href="" id="<?php echo $row['id']; ?>" class="delete"><i class="material-icons tiny red-text">clear</i> Delete</a> | <a href=""><i class="material-icons tiny green-text">share</i> Share</a></span>
-            </li>
-
+            
+            <?php
+              }
+            }
+            ?>
             </ul>
             </div>
             <div class="col l6 m6 s12">

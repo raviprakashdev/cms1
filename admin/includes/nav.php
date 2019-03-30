@@ -78,4 +78,16 @@ padding-left:0px;
             <a href="">Logout</a>
           </li>
         </ul>
-        
+         
+      <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+      <script>
+  //     
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+      </script>
