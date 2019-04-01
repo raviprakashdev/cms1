@@ -4,8 +4,9 @@ $conn=mysqli_connect("localhost", "root", "","blogera");
 <?php
 // include "includes/header.php";
 
-if(isset($_POST['publish']))
+if(isset($_POST['update']))
 {
+    $id=$_GET['id'];
 //   $data=$_POST['ckeditor'];
 //   $data=mysqli_real_escape_string($conn,$data);
 //   $title=$_POST['title'];
@@ -20,41 +21,27 @@ if(isset($_POST['publish']))
 //         $res=mysqli_query($conn,$sql);
 //   $title=htmlentities($title);
 
-  $image=$_FILES['image'];
-  $img_name=$_FILES['image']['name'];
-  $img_size=$_FILES['image']['size'];
-  $tmp_dir=$_FILES['image']['tmp_name'];
-  $type=$_FILES['image']['type'];
-  if($type=="image/jpeg" || $type=="image/png" || $type=="image/jpg")
-  {
-    if($img_size <=2097152)
-    {
-      move_uploaded_file($tmp_dir,"../images/".$img_name);
-      $sql="INSERT INTO `posts` (title,content,featured_image) VALUE('$title','$data','$img_name')";
+ 
+    //   $sql="INSERT INTO `posts` (title,content,featured_image) VALUE('$title','$data','$img_name')";
+      $sql="UPDATE `posts` SET title = '$title',content='$data' WHERE id=$id";
       $res=mysqli_query($conn,$sql);
       if($res)
       {
       $_SESSION['message']="<div class='chip green white-text'> Post is Published</div>";
-      header("Location: write.php");
+      header("Location: edit.php?id=".$id);
       echo "okay";
       }
       else
       {
         $_SESSION['message']="<div class='chip red black-text'> Sorry,Something went wrong.</div>";
-        header("Location: write.php");
+        header("Location: edit.php?id=".$id);
       }
     }
     else
     {
       $_SESSION['message']="<div class='chip red black-text'> Sorry, Image size exceded 2mb.</div>";
-        header("Location: write.php");
+        header("Location: edit.php");
     }
-  }
-  else
-  {
-    $_SESSION['message']="<div class='chip red black-text'> Sorry, Image format is not supported.</div>";
-    header("Location: write.php");
-  }
-
- }
+ 
+ 
 ?>

@@ -9,10 +9,10 @@ if(isset($_SESSION['uname']))
         <div class="main">
             <div class="row">
             <div class="col l6 m6 s12">
-            <ul class="collection with-header">
+            <ul class="collection with-header a">
             <li class="collection-header teal">
             <h5 class="white-text">Recent Posts</h5>
-            <!-- <span id="message"></span> -->
+            <span id="message"></span>
             </li>
             <?php
             $sql="SELECT * FROM posts ORDER BY id desc";
@@ -34,6 +34,9 @@ if(isset($_SESSION['uname']))
             
             <?php
               }
+            }
+            else{
+              echo "you have no posts";
             }
             ?>
             </ul>

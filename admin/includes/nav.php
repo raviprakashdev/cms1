@@ -59,13 +59,13 @@ padding-left:0px;
           </div>
           </li>
           <li>
-            <a href="">Dashboard</a>
+            <a href="dashboard.php">Dashboard</a>
           </li>
           <li>
-            <a href="">Post</a>
+            <a href="posts.php">Post</a>
           </li>
           <li>
-            <a href="">Images</a>
+            <a href="image.php">Images</a>
           </li>
           <li>
             <a href="">Comments</a>
@@ -75,7 +75,7 @@ padding-left:0px;
           </li>
           <div class="divider"></div>
           <li>
-            <a href="">Logout</a>
+            <a href="logout.php">Logout</a>
           </li>
         </ul>
          
