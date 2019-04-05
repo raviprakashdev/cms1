@@ -4,6 +4,9 @@
     <?php
     include "includes/navbar.php";
     ?>
+    <?php
+    include "includes/dbh.php";
+    ?>
     <div class="row">
     <div class="col-lg-9 col-md-9 col-sm-12">
     <!-- main content -->Main blog/content
@@ -14,10 +17,17 @@
         $id=mysqli_real_escape_string($conn,$id);
         $id=htmlentities($id);
         $sql="SELECT * FROM posts WHERE id=$id";
-        $res=mysqli_real_escape_string($conn,$sql);
+        $res=mysqli_query($conn,$sql);
         if(mysqli_num_rows($res)>0)
         {
             $row=mysqli_fetch_assoc($res);
+            $title=$row['title'];
+            $content=$row['content'];
+            ?>
+            <h5><?php echo $title?></h5>
+            <h5><?php echo $content?></h5>
+
+            <?php
         }
         else{
             header ("Location:index.php");

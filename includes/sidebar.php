@@ -1,18 +1,32 @@
-<form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active">
-    <h5>Trending Blogs</h5>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
-  <a href="#" class="list-group-item list-group-item-action">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptates.</a>
- 
- 
+<ul class="collection">
+<li class="collection-item">
+<h5>Search</h5>
+<form action="search.php" method="GET">
+<div class="input-field">
+<input type="text" id="search" name="search" placeholder="Search Anything.....">
+<div class="center">
+<input type="submit" class="btn" value="Search" name="submit"> 
 </div>
-    </div>
+</form>
+</div>
+</li>
+</ul>
+
+<div class="collection with-header">
+<h5 style="padding-left:20px">Trending Blogs</h5> 
+<?php
+$sql="select * from posts order by view DESC limit 5";
+$res=mysqli_query($conn,$sql);
+if(mysqli_num_rows($res)>0)
+{
+while($row=mysqli_fetch_assoc($res))
+{
+?>
+<a href="post.php?id=<?php echo $row['id'];?>" class="collection-item grey lighten-3"><?php echo $row['title'];?></a>
+<?php
+}
+}
+?>
+</div>
+
+</div>

@@ -12,7 +12,7 @@
     <!-- This is main content area -->
     <div class="col-lg-9 col-md-9 col-sm-12" >
       <!-- cards -->
-
+      <div class="row">
       <?php
       $sql="SELECT * FROM posts ORDER BY id DESC";
       $res=mysqli_query($conn,$sql);
@@ -23,7 +23,7 @@
         {
       ?>
 
-    <div class="row">
+   
     <div class="col-lg-3- col-md-4 col-sm-6" >
     <div class="card" style="width: 100%;">
   <img src="images/<?php echo $row['featured_image']?>" class="card-img-top" alt="..." style="height:200px;width:250px;">
