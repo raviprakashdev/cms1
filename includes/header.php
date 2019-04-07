@@ -22,7 +22,7 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="css/main.css" />
-    <title>Hello, world!</title>
+    <title>Content  management system</title>
   </head>
   <body>
     <!-- <h1>Hello, world!</h1> -->

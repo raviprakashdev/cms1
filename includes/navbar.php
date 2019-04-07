@@ -2,7 +2,7 @@
 <nav class="teal">
 <div class="nav-wrapper">
 <div class="container">
-<a href="index.php" class="brand-logo center">Blogera</a>
+<a href="index.php" class="brand-logo center">RAVI PRAKASH</a>
 <!-- <a href="" class="button-collapse" data-activates="sidenav"><i class="material-icons">menu</i></a> -->
 <ul class="hide-on-small-and-down right">
 <li><a href="index.php">Home</a></li>
