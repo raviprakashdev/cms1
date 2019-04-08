@@ -71,7 +71,7 @@ padding-left:0px;
             <a href="">Comments</a>
           </li>
           <li>
-            <a href="">Setting</a>
+            <a href="setting.php">Setting</a>
           </li>
           <div class="divider"></div>
           <li>

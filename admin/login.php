@@ -1,3 +1,14 @@
+<?php
+include "includes/header.php";
+if(isset($_SESSION['username']))
+{
+	echo "hello";
+	header("Location:dashboard.php");
+}
+	else
+{
+?>
+
 <!DOCTYPE html>
 <?php
 
@@ -94,3 +105,6 @@ header("Location:dashboard.php");
 	
 	
 </html>
+<?php
+}
+?>
