@@ -12,7 +12,7 @@ include "includes/navbar.php";
 <!-- This is main content area-->
 <div class="col l9 m9 s12">
 <?php
-$sql="select * from posts order by RAND() LIMIT 1";
+$sql="select * from posts order by id DESC";
 $res=mysqli_query($conn,$sql);
 if(mysqli_num_rows($res)>0)
 {

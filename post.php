@@ -20,7 +20,17 @@
         $res=mysqli_query($conn,$sql);
         if(mysqli_num_rows($res)>0)
         {
+            $sql2="select view from posts where id=$id";
+            $res2=mysqli_query($conn,$sql2);
+            $row2=mysqli_fetch_assoc($res2);
+            $view=$row2['view'];
+            $view=$view+1;
+            $sql3="update posts set view=$view where id=$id";
+            mysqli_query($conn,$sql3);
+
             $row=mysqli_fetch_assoc($res);
+           
+            echo "view : - ".$row2['view'];
             $title=$row['title'];
             $content=$row['content'];
             ?>
@@ -44,7 +54,7 @@
        <!-- <div class="col l9 m9 s12" > -->
     <h5>Related Blogs</h5>
     <?php
-$sql="select * from posts order by id DESC";
+$sql="select * from posts order by rand() limit 4";
 $res=mysqli_query($conn,$sql);
 if(mysqli_num_rows($res)>0)
 {
