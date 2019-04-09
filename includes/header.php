@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+// include "includes/dbh.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
