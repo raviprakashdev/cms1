@@ -48,43 +48,29 @@ if(isset($_SESSION['uname']))
             <span id="message1"></span>
             </li>
             
-            <li class="collection-item">
-                <a href="">title</a>
-                <br>
-            <span class="secondary-content">
-           
-            </span>
-            <br>
-            <span><a href="" class="approve" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> Approve</a></span>
-            </li>
-            <li class="collection-item">
-                <a href="">title</a>
-                <br>
-            <span class="secondary-content">
-           
-            </span>
-            <br>
-            <span><a href="" class="approve" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> Approve</a></span>
-            </li>
-            <li class="collection-item">
-                <a href="">title</a>
-                <br>
-            <span class="secondary-content">
-           
-            </span>
-            <br>
-            <span><a href="" class="approve" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> Approve</a></span>
-            </li>
-            <li class="collection-item">
-            
-            <span class="secondary-content">
-           
-            </span>
-            <br>
-            <span><a href="" class="approve" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> Approve</a></span>
-            </li>
-            
-            
+            <?php
+$sql4="select * from comment order by id DESC";
+$res4=mysqli_query($conn,$sql4);
+if(mysqli_num_rows($res4)>0)
+{
+  while($row=mysqli_fetch_assoc($res4))
+  {
+?>
+<li class="collection-item">
+<?php echo $row['comment_text']; ?>
+<span class="secondary-content">
+<?php echo $row['email']; ?>
+</span>
+<br>
+<span><a href="" class="approve" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> Approve</a></span>
+<span><a href="" class="remove" id="<?php echo $row['id'];?>"><i class="material-icons tiny green-text">done</i> remove</a></span>
+</li>
+<?php
+
+  }
+}
+?>
+
             
             </ul>
             </div>

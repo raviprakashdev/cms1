@@ -75,7 +75,7 @@ if(isset($_SESSION['message']))
 <h5>Comments</h5>
 <ul class="collection">
 <?php
-$sql4="select * from comment where post_id=$id  order by id DESC limit 5";
+$sql4="select * from comment where post_id=$id and status=1 order by id DESC limit 5";
 $res8=mysqli_query($conn,$sql4);
 if(mysqli_num_rows($res8)>0)
 {
